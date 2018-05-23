@@ -1,8 +1,12 @@
 <h2>Name: <%= @product["name"] %></h2>
-<h3>Price:  <%= @product["price"] %></h3>
+<h3>Price:  <%= @product["formatted"]["price"] %></h3>
+<h4>Tax: <%= @product["formatted"]["tax"] %></h4>
+<h4>Total: <%= @product["formatted"]["total"] %></h4>
 <h4>Description: <%= @product["description"] %></h4>
-<h4>Image URL: <%= @product["image_url"] %></h4>
 <img src="<%= @product['image_url'] %>">
+
 <br>
 <a href="/client/products/<%= @product['id'] %>/edit">Edit</a>
 <a href="/client/products/<%= @product['id'] %>" data-method="delete">Delete</a>
+
+<h6>updated on <%= @product["formatted"]["updated_at"] %></h6>

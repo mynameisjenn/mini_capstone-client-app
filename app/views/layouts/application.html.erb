@@ -11,6 +11,14 @@
   <body>
     <a href="/">Home</a>
     <a href="/client/products/new">New Product</a>
+    <a href="/signup">Sign Up</a>
+
+    <a href="/login">Log In</a>
+    <a href="/logout" data-method="delete">Log Out</a>
+
+    <% if @jwt %>
+      <h5> </h5>
+    <% end %>
 
     <% flash.each do |name, message| %>
       <%= message %>

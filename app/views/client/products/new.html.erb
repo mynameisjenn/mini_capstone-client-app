@@ -1,4 +1,5 @@
 <!-- <form action="client/products" method="post"> -->
+<h1>Add New Product</h1>  
 <%= form_tag '/client/products', method: :post do %>
   <div>
     Name: <input type="text" name="name">
@@ -10,8 +11,9 @@
     Description: <input type="text" name="description">
   </div>
   <div>
-    Image URL: <input type="text" name="image_url">
+    Supplier ID: <input type="text" name="supplier_id">
+
   </div>
-  <input type="submit" value="Add Product">
+  <input type="submit" value="Add Product" />
 <!-- </form> -->
 <% end %>

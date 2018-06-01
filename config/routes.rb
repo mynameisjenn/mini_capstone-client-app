@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'carted_product/client/carted_products'
+
   get '/' => 'client/products#index'
 
   get "/signup" => "users#new"
@@ -16,5 +18,13 @@ Rails.application.routes.draw do
     get '/products/:id/edit' => 'products#edit'
     patch '/products/:id/' => 'products#update'
     delete '/products/:id' => 'products#destroy'
-  end
+
+    
+    post '/orders' => 'orders#create'
+    get 'orders/:id' => 'orders#show'
+
+    get 'carted_products' => 'carted_products#index'
+    post '/carted_products' => 'carted_products#create' 
+  
+  end  
 end

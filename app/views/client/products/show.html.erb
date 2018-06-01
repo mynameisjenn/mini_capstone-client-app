@@ -8,6 +8,19 @@
   <img src="<%= image["url"] %>">
 <% end %>
 
+<h1>Product Order Form:</h1>  
+<%= form_tag '/client/carted_products', method: :post do %>
+
+ <input type="hidden" name="product_id" value="<%= @product['id']%>" />
+
+  <div>
+    Quantity: <input type="text" name="quantity" />
+  </div>
+  
+  <input type="submit" value="Add to Cart" />
+
+<% end %>
+
 <h6>Supplier: <%= @product["supplier"]["name"] %></h6>
 <br>
 <a href="/client/products/<%= @product['id'] %>/edit">Edit</a>

@@ -1,17 +1,26 @@
 <h1>Update Product</h1>
 
-<%= form_tag "/client/products/#{ @product['id'] }", method: :patch do %>
+<% if @errors %>
+  <ul>
+    <% @errors.each do |each| %>
+    <li> <%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= form_tag "/client/products/#{@product['id']}", method: :patch do %>
   <div>
-    Name: <input type="text" name="title" placeholder="<%= @product['name'] %>" value="<%= @product['name'] %>">
+    Name: <input type="text" name="title" value="<%= @product['name'] %>" />
   </div>
   <div>
-   Price: <input type="text" name="title" value="<%= @product['price'] %>">
+   Price: <input type="text" name="title" value="<%= @product['price'] %>" />
   </div> 
   <div>
-  Description: <input type="text" name="description" value="<%= @product['description'] %>">
+  Description: <input type="text" name="description" value="<%= @product['description'] %>" />
   </div>
   <div>
-    Supplier ID: <input type="text" name="supplier_id" value="<%= @product["supplier"]["id"] %>">
+    Supplier ID: <input type="text" name="supplier_id" value="<%= @product['supplier']['id'] %>" />
   </div>
 
   <input type="submit" value="Update Product" /> 

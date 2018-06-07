@@ -1,0 +1,12 @@
+<h1>Your Cart</h1>
+
+  <% @carted_products.each do |carted_product| %>
+    <p><%= carted_product["product"]["name"] %></p>
+    <p><%= carted_product["product"]["price"] %></p>
+    <p><%= carted_product["quantity"] %></p>
+
+  <a href="/client/carted_products/<%= carted_product['id'] %>" data-method="delete">Remove</a>
+  <% end %>
+
+<a href="/client/orders" data-method="post">Create Order</a>
+
